@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Duna AI Product Description</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;900&family=Ubuntu:wght@300;400;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+<div class="overlay"></div>
+<section id="prime-section">
+    <div class="header">
+        <img src="../static/Slothy-AI.png"
+             class="logo">
+        <h1>Chat</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-12 description-div" id="chat-box">
+            {% for item in answer %}
+            <div class="chat-wrapper"
+                 style="display:flex; flex-direction: column; justify-content: center">
+                <div class="answer-box">
+                    <p class="answer"
+                       style="background-color: {{ '#BFE1F8' if loop.index % 2 == 0 else '#fff' }}; text-align: {{ 'left' if loop.index % 2 == 0 else 'right' }};">
+                        {{ item }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <form class="form" action="/response" method="post">
+            <div class="form-div">
+                <input type="text" name="prompt" class="input-group" placeholder="Scrie cât mai în italiana poți..."
+                       required
+                       pattern=".*\S+.*">
+                <button type="submit" class="btn btn-dark btn-lg btn-block form__button" onclick="showLoading();">Raspunde
+                </button>
+                <div id="loading" style="display: none; margin-top: -130px; margin-bottom: -110px;">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_JvnSWRVLal.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+</div>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+<footer>
+    <p style="text-align:center; color: #c3c3c3;">Made with ♥️ by <a href="https://ripples.digital/" target="_blank">Ripples.Digital</a>
+    </p>
+    <p style="text-align:center; color: #807E7E;"> All rights reserved © Ripples <span id="footerData"></span></p>
+</footer>
+<!--Boostrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+
+<script>
+var data = new Date();
+data.setDate(data.getDate() - 24);
+var data_anterioara = data.toLocaleDateString("ro-RO");
+var options = { year: 'numeric' };
+document.getElementById("footerData").innerHTML = data.toLocaleDateString("ro-RO", options);
+
+
+</script>
+
+<script>
+        $(document).ready(function() {
+
+            const chatBox = document.getElementById("chat-box");
+
+// This function will scroll to the bottom of the chat box
+function scrollToBottom() {
+console.log(chatBox)
+console.log(chatBox.scrollHeight)
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+scrollToBottom();
+
+            // Add/remove placeholder class on focus/blur
+            $('input,textarea').focus(function() {
+                $(this).attr('placeholder', '');
+            }).blur(function() {
+                $(this).attr('placeholder', $(this).attr('data-placeholder'));
+            });
+
+            // Set data-placeholder attribute on page load
+            $('input,textarea').each(function() {
+                $(this).attr('data-placeholder', $(this).attr('placeholder'));
+            });
+        });
+
+
+</script>
+
+<script>
+ function showLoading() {
+    document.getElementById("loading").style.display = "block";
+  }
+
+  function hideLoading() {
+    document.getElementById("loading").style.display = "none";
+  }
+
+</script>
+</html>
+
+
+
