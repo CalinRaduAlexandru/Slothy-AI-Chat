@@ -1,5 +1,15 @@
 from flask import Flask, render_template, request
 import openai, config
+import os
+from dotenv import load_dotenv
+
+def configure():
+    load_dotenv()
+
+
+configure()
+
+openai.api_key = os.getenv('api_key')
 
 
 openai.api_key = config.OPENAI_API_KEY
