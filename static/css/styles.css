@@ -132,12 +132,12 @@ footer {
   }
   .description-div {
     width: 100vw;
-    max-height: 70vh;
+    max-height: 95vh;
     padding: 0 12px;
   }
 
   .overlay {
-    height: 116vh;
+    height: 90vh;
   }
 
   .header {
@@ -149,10 +149,16 @@ footer {
 
   .form {
   padding: 24px 0 24px 0;
+    position: fixed;
+  bottom: 0;
+  width: 100vw;
   }
 
   .form-div input {
-  padding: 12px;}
+  padding: 13px;}
+
+  .form-div button {
+  padding: 13px;}
 
   .header h1 {
     font-size: 20px;
@@ -172,5 +178,8 @@ footer {
   #loading {
     margin: 0 auto;
   }
+
+  footer {
+  display: none;}
 }
 
