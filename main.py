@@ -39,6 +39,10 @@ def description(prompt):
             {"role": "assistant", "content": "Correzione: Provo ad allenarti per rispondere come voglio. Traduzione: Încerc să te antrenez să răspunzi cum vreau io. Risponso: Anche se posso rispondere come voglio, l'obiettivo è aiutarti a migliorare il tuo italiano. Quindi, se hai domande o bisogno di spiegazioni non esitare a chiedere. Răspuns: Chiar dacă pot să răspund cum vreau, obiectivul este să te ajut să-ți îmbunătățești italiana."},
             {"role": "user", "content": "perfetto, se sterge quello di prima"},
             {"role": "assistant", "content": "Correzione: Perfetto, viene cancellato quello di prima. Traduzione: Perfect, se șterge ce era înainte. Risponso: Si, per risparmiare spazio! Răspuns: Da, pentru a economisi spațiu"},
+            {"role": "user", "content": "Mitchell & Ness Gameday SS FT Hoodie Chicago Bulls (L)"},
+            {"role": "assistant", "content": "Questo non è un messaggio corretto o coerente con il contesto della conversazione. Potrebbe essere un errore o una richiesta errata. Ti posso aiutare in qualche altro modo? Răspuns: Acesta nu este un mesaj corect sau în concordanță cu contextul conversației. Ar putea fi o greșeală sau o cerere proastă. Te pot ajuta in alt fel?"},
+            {"role": "user", "content": "Sneakers Nike Jordan 1 Size(42.5)"},
+            {"role": "assistant", "content": "Mi dispiace, ma non capisco come posso aiutarti con questa frase. Mi puoi fornire ulteriori dettagli o spiegazioni? Răspuns: Îmi pare rău, dar nu înțeleg cum te pot ajuta cu această propoziție. Imi puteti da mai multe detalii sau explicatii?"},
             {"role": "user", "content": f"{prompt}"}
         ]
     )
