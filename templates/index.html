@@ -38,15 +38,17 @@
         </div>
         <form class="form" action="/response" method="post">
             <div class="form-div">
-                <input type="text" name="prompt" class="input-group" placeholder="Scrie cât mai în italiana poți..."
-                       required
-                       pattern=".*\S+.*">
-                <button type="submit" class="btn btn-dark btn-lg btn-block form__button" onclick="showLoading();">Raspunde
-                </button>
-                <div id="loading" style="display: none; margin-top: -130px; margin-bottom: -110px;">
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_JvnSWRVLal.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
-</div>
+            <div id="loading" style="display: none; margin-top: -130px; margin-bottom: -130px;">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_JvnSWRVLal.json"
+                               background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                                   autoplay></lottie-player>
+                </div>
+            <input type="text" name="prompt" class="input-group" placeholder="Scrie cât mai în italiana poți..."
+                   required
+                   pattern=".*\S+.*">
+            <button type="submit" class="btn btn-dark btn-lg btn-block form__button" onclick="showLoading();">Raspunde
+            </button>
             </div>
         </form>
     </div>
@@ -76,6 +78,7 @@ var options = { year: 'numeric' };
 document.getElementById("footerData").innerHTML = data.toLocaleDateString("ro-RO", options);
 
 
+
 </script>
 
 <script>
@@ -85,8 +88,6 @@ document.getElementById("footerData").innerHTML = data.toLocaleDateString("ro-RO
 
 // This function will scroll to the bottom of the chat box
 function scrollToBottom() {
-console.log(chatBox)
-console.log(chatBox.scrollHeight)
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
@@ -104,8 +105,6 @@ scrollToBottom();
                 $(this).attr('data-placeholder', $(this).attr('placeholder'));
             });
         });
-
-
 </script>
 
 <script>
@@ -116,6 +115,7 @@ scrollToBottom();
   function hideLoading() {
     document.getElementById("loading").style.display = "none";
   }
+
 
 </script>
 </html>

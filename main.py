@@ -11,6 +11,7 @@ configure()
 
 openai.api_key = os.getenv('api_key')
 
+
 #
 # openai.api_key = config.OPENAI_API_KEY
 
@@ -75,4 +76,4 @@ def get_chat():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)

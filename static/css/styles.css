@@ -3,52 +3,49 @@ body {
   background-image: url("../landscape.png");
   background-blend-mode: hard-light;
   /* The image used */
-  background-color: #4C4C4B;
+  background-color: #4c4c4b;
   /* Used if the image is unavailable */
   background-position: center;
   /* Center the image */
   background-repeat: no-repeat;
   /* Do not repeat the image */
   background-size: cover;
-  font-family: 'Poppins, sans-serif';
+  font-family: "Poppins, sans-serif";
 }
 
 .overlay {
-position: absolute;
-          top: 0;
-          left: 0;
-          background-color: #000;
-          opacity: 0.8;
-          width: 100%;
-          height: 129vh;
-          z-index: -1;
-          }
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.8;
+  width: 100%;
+  height: 129vh;
+  z-index: -1;
+}
 
 .header {
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
 }
 
 .logo {
   width: 235px;
-  height: 60px;;
+  height: 60px;
   margin: 0px 10px;
 }
 
 .header h1 {
-margin-top: 24px;
+  margin-top: 24px;
   color: white;
   font-size: 3rem;
   font-weight: 900;
-
 }
 
 .container-fluid {
   padding: 2px 30%;
-
 }
 
 .description-div {
@@ -57,16 +54,16 @@ margin-top: 24px;
   max-height: 70vh;
   padding: 40px;
   border-radius: 8px 8px 0 0;
-  overflow:scroll;
-  background-color:#E7EDEC;
+  overflow: scroll;
+  background-color: #e7edec;
   position: relative;
 }
 
 .form {
-background: #C6DAE8;
-opacity: 0.9;
-padding: 24px 0 12px 0;
-border-radius: 0 0 8px 8px;
+  background: #c6dae8;
+  opacity: 0.9;
+  padding: 24px 0 12px 0;
+  border-radius: 0 0 8px 8px;
 }
 
 .form-div {
@@ -79,16 +76,26 @@ border-radius: 0 0 8px 8px;
   margin: 12px 0;
   border: none;
   color: white;
- background: rgb(241,203,132);
-background: linear-gradient(96deg, rgba(241,203,132,1) 0%, rgba(193,174,179,1) 44%, rgba(147,147,226,1) 100%);
-box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.1) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.01) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.03) 0px 2px 1px, rgba(0, 0, 0, 0.06) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  background: rgb(241, 203, 132);
+  background: linear-gradient(
+    96deg,
+    rgba(241, 203, 132, 1) 0%,
+    rgba(193, 174, 179, 1) 44%,
+    rgba(147, 147, 226, 1) 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.01) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.03) 0px 2px 1px, rgba(0, 0, 0, 0.06) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .form-div input {
-border: none;
-padding: 8px;
-border-radius: 8px;
-background: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  background: #fff;
 }
 
 .form-div input:focus {
@@ -96,50 +103,70 @@ background: #fff;
   border: none;
 }
 
-
 .chat-wrapper {
-display: flex;
-flex-direction: column
+  display: flex;
+  flex-direction: column;
 }
 
 .answer {
-max-width: 100%;
-padding: 12px;
-border-radius: 12px;
-box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  max-width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
 }
 
 .answer-box {
-padding-left: 6px;
-padding-top: 6px;
-border-radius: 8px;
-display: flex !important;
-
+  padding-left: 6px;
+  padding-top: 6px;
+  border-radius: 8px;
+  display: flex !important;
 }
 
 footer {
-padding: 40px 0 0 0;
+  padding: 40px 0 0 0;
 }
 
 @media only screen and (max-width: 768px) {
-
-.container-fluid {
-  padding: 0;
-
-}
+  .container-fluid {
+    padding: 0;
+  }
   .description-div {
-  width: 100vw;
+    width: 100vw;
+    max-height: 70vh;
+    padding: 0;
+  }
+
+  .overlay {
+    height: 123vh;
   }
 
   .header {
-padding: 12px 0;
+    padding: 12px 0;
+    height: 6vh;
+    justify-content: flex-start;
+    margin-left: 12px;
+  }
+
+  .form {
+  padding: 24px 0 24px 0;}
+
+  .header h1 {
+    font-size: 20px;
+    margin-top: 16px;
+  }
+
+  .logo {
+    width: 90px;
+    height: 30px;
+  }
+
+  .form-div {
+  width: 90%;
+  margin: 0 5%;
+  }
+
+  #loading {
+    margin-left: 15px;
+  }
 }
 
-.overlay {
-          height: 133vh;
-}
-
-.header {
-margin-left: -12px;
-}
-}
