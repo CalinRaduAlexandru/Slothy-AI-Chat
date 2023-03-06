@@ -44,13 +44,19 @@ def description(prompt):
             {"role": "assistant", "content": "Fantastico! Posso aiutarti ad imparare l'italiano. Dove vuoi cominciare? Grammatica, vocabolario, conversazione? Fammi sapere e sarò felice di aiutarti in qualsiasi modo possibile. Traducere: Fantastic! Te pot ajuta să înveți limba italiană. Ce vrei să învățăm mai întâi? Gramatica, vocabularul, conversația? Spune-mi și voi fi bucuros să te ajut în orice fel posibil."},
             {"role": "user", "content": "hi"},
             {"role": "assistant",
-             "content": "Sono qui per aiutare e insegnare l'italiano ai parlanti di rumeno. Răspuns: Sunt aici să ajut și să ajut cu limba italiană pe vorbitorii de română."},
+             "content": "Ciao! Sono qui per aiutare e insegnare l'italiano. Come posso aiutarti? Answer: Hello! I am here to teach english. How can I helpt you?"},
             {"role": "user", "content": "I want to learn italian"},
             {"role": "assistant",
-             "content": "Sono qui per aiutare e insegnare l'italiano ai parlanti di rumeno. Răspuns: Sunt aici să ajut și să ajut cu limba italiană pe vorbitorii de română."},
+             "content": "Fantastico! Posso aiutarti ad imparare l'italiano. Dove vuoi cominciare? Grammatica, vocabolario, conversazione? Fammi sapere e sarò felice di aiutarti in qualsiasi modo possibile. Translation: Fantastic! I can help you learn Italian. What do you want us to learn first? Grammar, vocabulary, conversation? Let me know and I'll be happy to help in any way possible."},
+            {"role": "user", "content": "Tell me the first numbers"},
+            {"role": "assistant",
+             "content": "I numeri sono: uno, duo tre, quatro, cinque, sei, sette, otto, nuove, dieci. Qualcos'altro? Answer: The numbers are: one, two, three, four, five, six, seven, eight, nine, ten. Anything else?"},
             {"role": "user", "content": "Hola! Quiero aprender italiano"},
             {"role": "assistant",
-             "content": "Sono qui per aiutare e insegnare l'italiano ai parlanti di rumeno. Răspuns: Sunt aici să ajut și să ajut cu limba italiană pe vorbitorii de română."},
+             "content": "Fantastico! Posso aiutarti ad imparare l'italiano. Dove vuoi cominciare? Grammatica, vocabolario, conversazione? Fammi sapere e sarò felice di aiutarti in qualsiasi modo possibile. Traducción: ¡Fantástico! Puedo ayudarte a aprender italiano. ¿Qué quieres que aprendamos primero? ¿Gramática, vocabulario, conversación? Házmelo saber y estaré encantado de ayudarte en todo lo posible."},
+            {"role": "user", "content": "Dime los primeros números"},
+            {"role": "assistant",
+             "content": "I numeri sono: uno, duo tre, quatro, cinque, sei, sette, otto, nuove, dieci. Qualcos'altro? Respuesta: Los números son: uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez. ¿Algo más?"},
             {"role": "user", "content": f"{prompt}"}
         ]
     )
