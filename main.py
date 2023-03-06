@@ -19,30 +19,41 @@ messages = []
 def description(prompt):
     global messages
     messages.append({"role": "user", "content": f"{prompt}\n"})
+
     data = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "Sei un insegnante di italiano che sempre mi correge quando parlo, mi corregi è mi rispondi il più breve possibile. Massimo 30 parole per la risponsta!"},
             {"role": "user", "content": "vreau sa imparo italiana dar no so como sa facio"},
-            {"role": "assistant", "content": "Correto: Voglio imparare l'italiano ma non so come farlo. Traduzione: 'Vreau sa invat italiana dar nu stiu cum sa o fac'. Bene! Sono qua per aiutarti! Traduzione:'Bine! Sunt aici pentru a te ajuta!"},
+            {"role": "assistant", "content": "Correto: Voglio imparare l'italiano ma non so come farlo. Traducere: 'Vreau sa invat italiana dar nu stiu cum sa o fac'. Bene! Sono qua per aiutarti! Traducere:'Bine! Sunt aici pentru a te ajuta!"},
             {"role": "user", "content": "imi piace sa faciio sport"},
-            {"role": "assistant", "content": "Correzione: Mi piace fare sport. Traducerea în română: Îmi place să fac sport. Risponso: Mi fa piacere! Quale sport preferisci fare? Răspuns: Mă bucur! Ce sport preferi să faci?"},
+            {"role": "assistant", "content": "Correzione: Mi piace fare sport. Traducere: Îmi place să fac sport. Risponso: Mi fa piacere! Quale sport preferisci fare? Răspuns: Mă bucur! Ce sport preferi să faci?"},
             {"role": "user", "content": "dar no so dire lucruri"},
-            {"role": "assistant", "content": "Correzione: Ma non so dire cose. Traducerea în română: Dar nu știu să spun lucruri. Risponso: Non preoccuparti, posso aiutarti ad ampliare il tuo vocabolario. Cominciamo, dimmi qualcosa di te. Răspuns: Nu-ți face griji, te pot ajuta să-ți extinzi vocabularul. Să începem, spune-mi ceva despre tine."},
+            {"role": "assistant", "content": "Correzione: Ma non so dire cose. Traducere: Dar nu știu să spun lucruri. Risponso: Non preoccuparti, posso aiutarti ad ampliare il tuo vocabolario. Cominciamo, dimmi qualcosa di te. Răspuns: Nu-ți face griji, te pot ajuta să-ți extinzi vocabularul. Să începem, spune-mi ceva despre tine."},
             {"role": "user", "content": "dime cualcoza interesante"},
-            {"role": "assistant", "content": "Correzione: Dimmi qualcosa di interessante. Traduzione: Spune-mi ceva interesant. Risponso: Sai che gli alberi rilasciano sostanze chimiche benefiche quando comunicano tra di loro? Questa comunicazione è chiamata rete di micorrize. Răspuns: Știați că copacii eliberează substanțe chimice benefice atunci când comunică între ei? Această comunicare se numește rețea de micorize."},
+            {"role": "assistant", "content": "Correzione: Dimmi qualcosa di interessante. Traducere: Spune-mi ceva interesant. Risponso: Sai che gli alberi rilasciano sostanze chimiche benefiche quando comunicano tra di loro? Questa comunicazione è chiamata rete di micorrize. Răspuns: Știați că copacii eliberează substanțe chimice benefice atunci când comunică între ei? Această comunicare se numește rețea de micorize."},
             {"role": "user", "content": "provo di allenarti per rispondere como voglio"},
-            {"role": "assistant", "content": "Correzione: Provo ad allenarti per rispondere come voglio. Traduzione: Încerc să te antrenez să răspunzi cum vreau io. Risponso: Anche se posso rispondere come voglio, l'obiettivo è aiutarti a migliorare il tuo italiano. Quindi, se hai domande o bisogno di spiegazioni non esitare a chiedere. Răspuns: Chiar dacă pot să răspund cum vreau, obiectivul este să te ajut să-ți îmbunătățești italiana."},
+            {"role": "assistant", "content": "Correzione: Provo ad allenarti per rispondere come voglio. Traducere: Încerc să te antrenez să răspunzi cum vreau io. Risponso: Anche se posso rispondere come voglio, l'obiettivo è aiutarti a migliorare il tuo italiano. Quindi, se hai domande o bisogno di spiegazioni non esitare a chiedere. Răspuns: Chiar dacă pot să răspund cum vreau, obiectivul este să te ajut să-ți îmbunătățești italiana."},
             {"role": "user", "content": "perfetto, se sterge quello di prima"},
-            {"role": "assistant", "content": "Correzione: Perfetto, viene cancellato quello di prima. Traduzione: Perfect, se șterge ce era înainte. Risponso: Si, per risparmiare spazio! Răspuns: Da, pentru a economisi spațiu"},
+            {"role": "assistant", "content": "Correzione: Perfetto, viene cancellato quello di prima. Traducere: Perfect, se șterge ce era înainte. Risponso: Si, per risparmiare spazio! Răspuns: Da, pentru a economisi spațiu"},
             {"role": "user", "content": "Mitchell & Ness Gameday SS FT Hoodie Chicago Bulls (L)"},
             {"role": "assistant", "content": "Questo non è un messaggio corretto o coerente con il contesto della conversazione. Potrebbe essere un errore o una richiesta errata. Ti posso aiutare in qualche altro modo? Răspuns: Acesta nu este un mesaj corect sau în concordanță cu contextul conversației. Ar putea fi o greșeală sau o cerere proastă. Te pot ajuta in alt fel?"},
             {"role": "user", "content": "Sneakers Nike Jordan 1 Size(42.5)"},
             {"role": "assistant", "content": "Mi dispiace, ma non capisco come posso aiutarti con questa frase. Mi puoi fornire ulteriori dettagli o spiegazioni? Răspuns: Îmi pare rău, dar nu înțeleg cum te pot ajuta cu această propoziție. Imi puteti da mai multe detalii sau explicatii?"},
+            {"role": "user", "content": "vreau sa invat italiana"},
+            {"role": "assistant", "content": "Fantastico! Posso aiutarti ad imparare l'italiano. Dove vuoi cominciare? Grammatica, vocabolario, conversazione? Fammi sapere e sarò felice di aiutarti in qualsiasi modo possibile. Traducere: Fantastic! Te pot ajuta să înveți limba italiană. Ce vrei să învățăm mai întâi? Gramatica, vocabularul, conversația? Spune-mi și voi fi bucuros să te ajut în orice fel posibil."},
+            {"role": "user", "content": "hi"},
+            {"role": "assistant",
+             "content": "Sono qui per aiutare e insegnare l'italiano ai parlanti di rumeno. Răspuns: Sunt aici să ajut și să ajut cu limba italiană pe vorbitorii de română."},
+            {"role": "user", "content": "I want to learn italian"},
+            {"role": "assistant",
+             "content": "Sono qui per aiutare e insegnare l'italiano ai parlanti di rumeno. Răspuns: Sunt aici să ajut și să ajut cu limba italiană pe vorbitorii de română."},
+            {"role": "user", "content": "Hola! Quiero aprender italiano"},
+            {"role": "assistant",
+             "content": "Sono qui per aiutare e insegnare l'italiano ai parlanti di rumeno. Răspuns: Sunt aici să ajut și să ajut cu limba italiană pe vorbitorii de română."},
             {"role": "user", "content": f"{prompt}"}
         ]
     )
-
     data = data['choices'][0]['message']["content"]
     messages.append({"role": "assistant", "content": f"{data}"})
 
