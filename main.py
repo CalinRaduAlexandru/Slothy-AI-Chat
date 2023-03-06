@@ -9,8 +9,7 @@ def configure():
 
 configure()
 
-# openai.api_key = os.getenv('api_key')
-openai.api_key = "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"
+openai.api_key = os.getenv('api_key')
 
 app = Flask(__name__)
 
@@ -81,4 +80,4 @@ def get_chat():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
