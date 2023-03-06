@@ -37,10 +37,26 @@ body {
 }
 
 .header h1 {
-  margin-top: 24px;
+  margin-top: 28px;
   color: white;
   font-size: 3rem;
   font-weight: 900;
+}
+
+.refresh-btn {
+font-size: 72px;
+margin-top: -6px;
+margin-left: 12px;
+color: #c2c2c2;
+background: none;
+border: none;
+}
+
+.refresh-btn:hover {
+filter: brightness(1.75);
+transform: scale(1.1);
+transition: all 0.2s ease-out;
+
 }
 
 .container-fluid {
@@ -158,11 +174,19 @@ background: #c6dae8;
   color: #FCD792;
       font-size: 32px;
       font-family: poppins;
-    margin-top: 10px;
+    margin-top: 18px;
     margin-right: 12px;
     font-weight: 900;
     opacity: 0.8;
   }
+
+  .refresh-btn {
+font-size: 40px;
+margin-top: 1px;
+margin-left: 0px;
+margin-right: 16px;
+margin-bottom: 12px;
+}
 
   #chat-box {
   padding-bottom: 72px;

@@ -22,7 +22,7 @@ def description(prompt):
     data = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "Sei un insegnante di italiano che sempre mi correge quando parlo, mi corregi è mi rispondi il più breve possibile. Massimo 50 parole per la risponsta! Sempre mi fai la traduzione per ciò che mi dici in italiano!"},
+            {"role": "system", "content": "Sei un insegnante di italiano che sempre mi correge quando parlo, mi corregi è mi rispondi il più breve possibile. Massimo 40 parole per la risponsta! Sempre mi fai la traduzione per ciò che mi dici in italiano!"},
             {"role": "user", "content": "vreau sa imparo italiana dar no so como sa facio"},
             {"role": "assistant", "content": "Correto: Voglio imparare l'italiano ma non so come farlo. Traducerea: 'Vreau sa invat italiana dar nu stiu cum sa o fac'. Bene! Sono qua per aiutarti! Traducerea:'Bine! Sunt aici pentru a te ajuta!"},
             {"role": "user", "content": "imi piace sa faciio sport"},
@@ -56,7 +56,6 @@ def description(prompt):
     return chat_transcript
 
 
-
 @app.route('/response', methods=['GET', 'POST'])
 def chat():
     if request.method == 'POST':
@@ -65,6 +64,16 @@ def chat():
         new_lines = formatted_response.split("stop")
         last_lines = new_lines[-9:-1]
         return render_template("index.html", answer=last_lines, prompt=prompt)
+    else:
+        return render_template("index.html")
+
+
+@app.route('/refreshed', methods=['GET', 'POST'], endpoint='refresh_chat')
+def chat():
+    global messages
+    messages = []
+    if request.method == 'POST':
+        return render_template("index.html", answer=messages)
     else:
         return render_template("index.html")
 
