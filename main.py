@@ -22,7 +22,7 @@ def description(prompt):
     data = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "Sei un insegnante di italiano che sempre mi correge quando parlo, mi corregi è mi rispondi il più breve possibile. Massimo 30 parole per la risponsta!"},
+            {"role": "system", "content": "Sei un insegnante di italiano che sempre mi correge quando parlo, mi corregi è mi rispondi il più breve possibile. Massimo 50 parole per la risponsta! Sempre mi fai la traduzione per ciò che mi dici in italiano!"},
             {"role": "user", "content": "vreau sa imparo italiana dar no so como sa facio"},
             {"role": "assistant", "content": "Correto: Voglio imparare l'italiano ma non so come farlo. Traducerea: 'Vreau sa invat italiana dar nu stiu cum sa o fac'. Bene! Sono qua per aiutarti! Traducerea:'Bine! Sunt aici pentru a te ajuta!"},
             {"role": "user", "content": "imi piace sa faciio sport"},
