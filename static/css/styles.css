@@ -137,7 +137,7 @@ background: #c6dae8;
   .description-div {
     width: 100vw;
     height: 110vh;
-    padding: 12px 12px;
+    padding: 12px 12px 12px 6px;
   }
 
   .overlay {
@@ -162,6 +162,10 @@ background: #c6dae8;
     margin-right: 12px;
     font-weight: 900;
     opacity: 0.8;
+  }
+
+  #chat-box {
+  padding-bottom: 64px;
   }
 
   .form {

@@ -64,7 +64,6 @@ def chat():
         formatted_response = description(prompt)
         new_lines = formatted_response.split("stop")
         last_lines = new_lines[-9:-1]
-        print(last_lines)
         return render_template("index.html", answer=last_lines, prompt=prompt)
     else:
         return render_template("index.html")
