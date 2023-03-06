@@ -10,7 +10,6 @@ body {
   background-repeat: no-repeat;
   /* Do not repeat the image */
   background-size: cover;
-  font-family: "Poppins, sans-serif";
 }
 
 .overlay {
@@ -52,7 +51,7 @@ body {
   position: relative;
   height: 500px;
   max-height: 70vh;
-  padding: 40px;
+  padding: 40px 20px;
   border-radius: 8px 8px 0 0;
   overflow: scroll;
   background-color: #e7edec;
@@ -62,7 +61,7 @@ body {
 .form {
   background: #c6dae8;
   opacity: 0.9;
-  padding: 24px 0 12px 0;
+  padding: 24px 0 6px 0;
   border-radius: 0 0 8px 8px;
 }
 
@@ -113,6 +112,7 @@ body {
   padding: 12px;
   border-radius: 12px;
   box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  line-height: 1.8rem;
 }
 
 .answer-box {
@@ -127,31 +127,49 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+
+body {
+background: #c6dae8;
+}
   .container-fluid {
     padding: 0;
   }
   .description-div {
     width: 100vw;
-    max-height: 100vh;
-    padding: 0 12px;
+    height: 110vh;
+    padding: 12px 12px;
   }
 
   .overlay {
     height: 90vh;
+      background: #e7edec;
+      opacity: 0.9;
+      index: -1;
   }
 
   .header {
     padding: 12px 0;
     height: 6vh;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-left: 12px;
   }
 
+  .header h1 {
+  color: #FCD792;
+      font-size: 32px;
+      font-family: poppins;
+    margin-top: 10px;
+    margin-right: 12px;
+    font-weight: 900;
+    opacity: 0.8;
+  }
+
   .form {
-  padding: 24px 0 24px 0;
+  padding: 30px 0 24px 0;
     position: fixed;
   bottom: 0;
   width: 100vw;
+  opacity: 1;
   }
 
   .form-div input {
@@ -160,14 +178,9 @@ footer {
   .form-div button {
   padding: 13px;}
 
-  .header h1 {
-    font-size: 20px;
-    margin-top: 16px;
-  }
-
   .logo {
     width: 90px;
-    height: 30px;
+    height: auto;
   }
 
   .form-div {

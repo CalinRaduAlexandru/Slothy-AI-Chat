@@ -49,9 +49,9 @@ def description(prompt):
     chat_transcript = ""
     for message in messages:
         if message["role"] == "assistant":
-            chat_transcript += "Slothy-AI" + ": " + message['content'] + "stop"
+            chat_transcript += message['content'] + "stop"
         elif message["role"] == "user":
-            chat_transcript += "Tu" + ": " + message['content'] + "stop"
+            chat_transcript += message['content'] + "stop"
 
     return chat_transcript
 
@@ -63,8 +63,8 @@ def chat():
         prompt = request.form['prompt']
         formatted_response = description(prompt)
         new_lines = formatted_response.split("stop")
-        last_lines = new_lines[-9:]
-
+        last_lines = new_lines[-9:-1]
+        print(last_lines)
         return render_template("index.html", answer=last_lines, prompt=prompt)
     else:
         return render_template("index.html")

@@ -26,27 +26,35 @@
     <div class="container-fluid">
         <div class="col-md-12 description-div" id="chat-box">
             {% for item in answer %}
-            <div class="chat-wrapper"
-                 style="display:flex; flex-direction: column; justify-content: center">
-                <div class="answer-box">
-                    <p class="answer"
-                       style="background-color: {{ '#fff' if loop.index % 2 == 0 else '#BFE1F8' }};">
-                        {{ item }}</p>
+            <div class="chat-wrapper">
+            {% if loop.index % 2 == 0 %}
+                <div class="answer-box slothy-answer" style="margin-right: auto;">
+                    <img src="../static/slothy-icon.png" width="72px" height="72px" style="margin-top: -10px; margin-left: -6px;">
+                    <p class="answer" style="background-color: #fff;">{{ item }}</p>
                 </div>
-            </div>
+
+            {% else %}
+                <div class="answer-box your-answer" style="margin-left: auto;">
+                    <p class="answer" style="background-color: #BFE1F8;">{{ item }}</p>
+                </div>
+            {% endif %}
+                </div>
             {% endfor %}
         </div>
         <form class="form" action="/response" method="post">
             <div class="form-div">
-            <div id="loading" style="display: none; margin-top: -130px; margin-bottom: -90px;">
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_io5ZKsAQwu.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+                <div id="loading" style="display: none; margin-top: -130px; margin-bottom: -90px;">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_io5ZKsAQwu.json"
+                                   background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                                   autoplay></lottie-player>
                 </div>
-            <input type="text" name="prompt" class="input-group" placeholder="Scrie cât mai în italiana poți..."
-                   required
-                   pattern=".*\S+.*">
-            <button type="submit" class="btn btn-dark btn-lg btn-block form__button" onclick="showLoading();">Raspunde
-            </button>
+                <input type="text" name="prompt" class="input-group" placeholder="Scrie cât mai în italiana poți..."
+                       required
+                       pattern=".*\S+.*">
+                <button type="submit" class="btn btn-dark btn-lg btn-block form__button" onclick="showLoading();">
+                    Raspunde
+                </button>
             </div>
         </form>
     </div>
@@ -77,6 +85,7 @@ document.getElementById("footerData").innerHTML = data.toLocaleDateString("ro-RO
 
 
 
+
 </script>
 
 <script>
@@ -103,6 +112,7 @@ scrollToBottom();
                 $(this).attr('data-placeholder', $(this).attr('placeholder'));
             });
         });
+
 </script>
 
 <script>
@@ -113,6 +123,7 @@ scrollToBottom();
   function hideLoading() {
     document.getElementById("loading").style.display = "none";
   }
+
 
 
 </script>
