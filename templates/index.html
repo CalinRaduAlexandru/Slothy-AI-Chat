@@ -21,43 +21,24 @@
     <div class="header">
         <img src="../static/Slothy-AI.png"
              class="logo">
-        <div style="display: flex; background; red;">
-            <form method="POST" action="/refreshed" style="align-self: center;">
-                <button type="submit" class="refresh-btn" style="font-size: 40px;">↺</button>
-            </form>
-        </div>
     </div>
     <div class="container-fluid">
         <div class="col-md-12 description-div" id="chat-box">
-            {% for item in answer %}
             <div class="chat-wrapper">
-                {% if loop.index % 2 == 0 %}
                 <div class="answer-box slothy-answer" style="margin-right: auto;">
                     <img src="../static/slothy-icon.png" width="72px" height="72px"
                          style="margin-top: -10px; margin-left: -6px;">
-                    <p class="answer" style="background-color: #fff;">{{ item }}</p>
+                    <p class="answer" style="background-color: #fff;" id="response"></p>
                 </div>
-
-                {% else %}
-                <div class="answer-box your-answer" style="margin-left: auto;">
-                    <p class="answer" style="background-color: #BFE1F8;">{{ item }}</p>
-                </div>
-                {% endif %}
             </div>
-            {% endfor %}
         </div>
         <form class="form" action="/response" method="post">
             <div class="form-div">
-                <div id="loading" style="display: none; margin-top: -130px; margin-bottom: -90px;">
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_io5ZKsAQwu.json"
-                                   background="transparent" speed="1" style="width: 300px; height: 300px;" loop
-                                   autoplay></lottie-player>
-                </div>
-                <input type="text" name="prompt" class="input-group" placeholder="Scrie cât mai în spaniola poți..."
+                <input type="text" id="prompt" name="prompt" class="input-group"
+                       placeholder="Scrie cât mai în spaniola poți..."
                        required
                        pattern=".*\S+.*">
-                <button type="submit" class="btn btn-dark btn-lg btn-block form__button" onclick="showLoading();">
+                <button type="button" id="myButton" class="btn btn-dark btn-lg btn-block form__button">
                     Trimite
                 </button>
             </div>
@@ -65,77 +46,30 @@
     </div>
 </section>
 </body>
-<footer>
-    <p style="text-align:center; color: #c3c3c3;">Made with <span style="color:red;">❤️</span> by <a
-            href="https://ripples.digital/" target="_blank">Ripples.Digital</a>
-    </p>
-    <p style="text-align:center; color: #807E7E;"> All rights reserved © Ripples </p>
-</footer>
-<!--Boostrap -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
-        crossorigin="anonymous"></script>
+<script type="module">
+    import { Configuration, OpenAIApi } from "https://cdn.jsdelivr.net/npm/openai@3.2.1/dist/index.min.js";
+    async function fetchResponse() {
+        const prompt = document.getElementById("prompt").value;
+        if (!prompt) {
+            alert("Te rog adauga un comentariu");
+            return
+            }
 
-<script>
-var data = new Date();
-data.setDate(data.getDate() - 24);
-var data_anterioara = data.toLocaleDateString("ro-RO");
-var options = { year: 'numeric' };
-document.getElementById("footerData").innerHTML = data.toLocaleDateString("ro-RO", options);
-
-
-
-
-
-</script>
-
-<script>
-        $(document).ready(function() {
-
-            const chatBox = document.getElementById("chat-box");
-
-// This function will scroll to the bottom of the chat box
-function scrollToBottom() {
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-scrollToBottom();
-
-            // Add/remove placeholder class on focus/blur
-            $('input,textarea').focus(function() {
-                $(this).attr('placeholder', '');
-            }).blur(function() {
-                $(this).attr('placeholder', $(this).attr('data-placeholder'));
-            });
-
-            // Set data-placeholder attribute on page load
-            $('input,textarea').each(function() {
-                $(this).attr('data-placeholder', $(this).attr('placeholder'));
-            });
+        const configuration = new Configuration({
+        apiKey: process.env.OPENAI_API_KEY,
         });
 
-
-</script>
-
-<script>
- function showLoading() {
-    document.getElementById("loading").style.display = "block";
-  }
-
-  function hideLoading() {
-    document.getElementById("loading").style.display = "none";
-  }
-
-
-
-
-</script>
+        const openai = new OpenAIApi(configuration);
+        const completion = await openai.createCompletion({
+            model: "text-davinci-003",
+            prompt: prompt,
+        });
+        console.log(completion.data.choices[0].text);
+        const responseText = completion.data.choices[0].text;
+        document.getElementById("response").textContent = responseText;
+    }
+    document.getElementById("myButton").addEventListener("click", fetchResponse);
+  </script>
 </html>
 
 
