@@ -29,6 +29,9 @@
     </div>
     <div class="container-fluid">
         <div class="col-md-12 description-div" id="chat-box">
+            {% if not answer%}
+            <p>Write a text like for example: "I want учить russian"</p>
+            {% endif %}
             {% for item in answer %}
             <div class="chat-wrapper">
                 {% if loop.index % 2 == 0 %}
@@ -54,7 +57,8 @@
                                    background="transparent" speed="1" style="width: 300px; height: 300px;" loop
                                    autoplay></lottie-player>
                 </div>
-                <input type="text" name="prompt" class="input-group" placeholder="Scrie cât mai în spaniola poți..."
+                <input type="text" name="prompt" class="input-group"
+                       placeholder="Write in as much russian as you can..."
                        required
                        pattern=".*\S+.*">
                 <button type="submit" class="btn btn-dark btn-lg btn-block form__button" onclick="showLoading();">
@@ -93,6 +97,7 @@ document.getElementById("footerData").innerHTML = data.toLocaleDateString("ro-RO
 
 
 
+
 </script>
 
 <script>
@@ -121,6 +126,7 @@ scrollToBottom();
         });
 
 
+
 </script>
 
 <script>
@@ -131,6 +137,7 @@ scrollToBottom();
   function hideLoading() {
     document.getElementById("loading").style.display = "none";
   }
+
 
 
 

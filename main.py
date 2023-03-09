@@ -14,7 +14,7 @@ openai.api_key = os.getenv('api_key')
 app = Flask(__name__)
 
 
-messages = ['Write a text like for example: I want учить russian']
+messages = []
 
 def description(prompt):
     global messages
