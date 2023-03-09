@@ -14,7 +14,7 @@ openai.api_key = os.getenv('api_key')
 app = Flask(__name__)
 
 
-messages = []
+messages = ['Write a text like for example: I want учить russian']
 
 def description(prompt):
     global messages
@@ -23,9 +23,9 @@ def description(prompt):
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "Вы учитель русского языка, который всегда поправляет меня, когда я говорю, отвечает мне как можно короче и всегда переводит то, что вы мне говорите, на русский язык. Максимум 40 слов в ответе."},
-            {"role": "user", "content": "Я хочу научиться, dar не как это сделать"},
+            {"role": "user", "content": "Я хочу научиться, but не как это сделать"},
             {"role": "assistant", "content": "Correct: Я хочу научиться русскому, но не знаю, как это сделать.. Translation: 'I want to learn Russian, but I don't know how to do it.'. Answer: Отлично! Я здесь, чтобы помочь вам! Translation:'Great! I'm here to help you!"},
-            {"role": "user", "content": "Мне place заниматься спортом"},
+            {"role": "user", "content": "Мне like заниматься спортом"},
             {"role": "assistant", "content": "Correction: Мне нравится заниматься спортом. Translation: I like to do sports. Answer: Отлично! Какой вид спорта тебе нравится? Translation: Great! What sport do you prefer to do"},
             {"role": "user", "content": f"{prompt}"}
         ]
